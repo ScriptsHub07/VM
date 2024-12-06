@@ -23,17 +23,6 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
 }
-local Options = Fluent.Options
-do
-OrionLib:MakeNotification(
-        {
-            Name = "Notification",
-            Content = "Carregando Dark X",
-            Image = "",
-            Time = 7
-        }
-    )
-_G.lakala = true
 
 setclipboard("Dark X")
 
