@@ -44,7 +44,6 @@ local Checkkey = Tabs.KeySys:AddButton({
     Callback = function()
         local response = KeyGuardLibrary.validateDefaultKey(key)
         if response == trueData then
-           print("Key is valid")
            loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptsHub07/VM/refs/heads/main/test"))()
         else
            print("Key is invalid")
