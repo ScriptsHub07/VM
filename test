@@ -23,14 +23,6 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
 }
-local Options = Fluent.Options
-do
-Fluent:Notify({
-        Title = "Notification",
-        Content = "Carregando script...",
-        SubContent = "", -- Optional
-        Duration = 2 -- Set to nil to make the notification not disappear
-    })
 _G.lakala = true
 
 setclipboard("Dark X")
