@@ -50,10 +50,6 @@ if getgenv().ED_AntiKick then
 	return
 end
 
---// Variables
-
-local Players, StarterGui, OldNamecall = game:GetService("Players"), game:GetService("StarterGui")
-
 --// Global Variables
 
 getgenv().ED_AntiKick = {
