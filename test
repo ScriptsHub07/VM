@@ -1,7 +1,7 @@
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
-local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/shlexware/Orion/main/source")))()
 
 local Window = Fluent:CreateWindow({
     Title = " Dark X | Blox Fruits",
@@ -24,6 +24,16 @@ local Tabs = {
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
 }
+local Options = Fluent.Options
+do
+OrionLib:MakeNotification(
+        {
+            Name = "Notification",
+            Content = "Carregando Dark X",
+            Image = "",
+            Time = 7
+        }
+    )
 _G.lakala = true
 
 setclipboard("Dark X")
@@ -40,6 +50,10 @@ local getgenv, getnamecallmethod, hookmetamethod, newcclosure, checkcaller, stri
 if getgenv().ED_AntiKick then
 	return
 end
+
+--// Variables
+
+local Players, StarterGui, OldNamecall = game:GetService("Players"), game:GetService("StarterGui")
 
 --// Global Variables
 
@@ -2653,11 +2667,11 @@ local FastAttack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     DropdownDelayAttack:OnChanged(function(Value)
     _G.FastAttack = Value
 	if _G.FastAttack == "Fast Attack" then
-		_G.Fast_Delay = 0.7
+		_G.Fast_Delay = 0.001
 	elseif _G.FastAttack == "Normal Attack" then
-		_G.Fast_Delay = 1
+		_G.Fast_Delay = 2
 	elseif _G.FastAttack == "Super Fast Attack" then
-		_G.Fast_Delay = 0.5
+		_G.Fast_Delay = 0.001
 	end
 end)
 
