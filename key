@@ -51,6 +51,19 @@ local Checkkey = Tabs.KeySys:AddButton({
     end
 })
 
+local CheckPkey = Tabs.KeySys:AddButton({
+    Title = "Check premium Key",
+    Description = "Enter Key before pressing this button",
+    Callback = function()
+        local response = KeyGuardLibrary.validatePremiumKey(key)
+        if response == trueData then
+           loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptsHub07/VM/refs/heads/main/test"))()
+        else
+           print("Key Premium is invalid")
+        end
+    end
+})
+
 local Getkey = Tabs.KeySys:AddButton({
     Title = "Get Key",
     Description = "Get Key here",
