@@ -7534,55 +7534,57 @@ local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", De
     Toggle:OnChanged(function(Value)
         _G.LevelHunter = Value
     end)
+    spawn(function()
+        if _G.LevelHunter == true then
+            local farmandoNivel = true
+            local eliteHunterAtivo = false
+        
+        -- Função para farmar NPCs e upar nível
+        function farmarNivel()
+            _G.AutoLevel = true
+            _G.AutoElite = false
+            print("Fazendo farm de nível...")
+            
+            verificarEliteHunter()
+        end
+        
+        -- Função para verificar se o Elite Hunter está ativo
+        function verificarEliteHunter()
+            if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+                pararFarming()
+                irParaEliteHunter()
+            else
+                eliteHunterAtivo = false
+                farmandoNivel = true
+                farmarNivel()
+            end
+        end
+        
+        -- Função para parar o farming de nível e ir para o Elite Hunter
+        function pararFarming()
+            farmandoNivel = false
+            print("Elite Hunter detectado, indo caçar!")
+            _G.AutoLevel = false
+            _G.AutoElite = true
+        end
+        -- Função para retornar ao farming de nível
+        function retornarParaFarming()
+            print("Elite Hunter derrotado, voltando para o farming de nível...")
+            farmandoNivel = true
+            farmarNivel()
+        end
+        
+        -- Inicia o script, começando o farming de nível
+            if farmandoNivel == true then
+                farmarNivel()
+            else
+                -- Se não estiver farmando, significa que o Elite Hunter está ativo, aguardando até voltar para o farming.
+                wait(1)
+            end
+        end
+        end
+    end)
 
-if _G.LevelHunter == true then
-    local farmandoNivel = true
-    local eliteHunterAtivo = false
-
--- Função para farmar NPCs e upar nível
-function farmarNivel()
-    _G.AutoLevel = true
-    _G.AutoElite = false
-    print("Fazendo farm de nível...")
-    
-    verificarEliteHunter()
-end
-
--- Função para verificar se o Elite Hunter está ativo
-function verificarEliteHunter()
-    if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
-        pararFarming()
-        irParaEliteHunter()
-    else
-        eliteHunterAtivo = false
-        farmandoNivel = true
-        farmarNivel()
-    end
-end
-
--- Função para parar o farming de nível e ir para o Elite Hunter
-function pararFarming()
-    farmandoNivel = false
-    print("Elite Hunter detectado, indo caçar!")
-    _G.AutoLevel = false
-    _G.AutoElite = true
-end
--- Função para retornar ao farming de nível
-function retornarParaFarming()
-    print("Elite Hunter derrotado, voltando para o farming de nível...")
-    farmandoNivel = true
-    farmarNivel()
-end
-
--- Inicia o script, começando o farming de nível
-    if farmandoNivel == true then
-        farmarNivel()
-    else
-        -- Se não estiver farmando, significa que o Elite Hunter está ativo, aguardando até voltar para o farming.
-        wait(1)
-    end
-end
-end
 
 OrionLib:MakeNotification(
     {
