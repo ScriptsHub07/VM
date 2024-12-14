@@ -7531,11 +7531,12 @@ Tabs.Mf:AddParagraph({
 
 local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
 
-    Toggle:OnChanged(function(Value)
-        _G.LevelHunter = Value
+    Toggle:OnChanged(function()
+        farmarNivel()
+        verificarEliteHunter()
+        pararFarming()
+        retornarParaFarming()
     end)
-    spawn(function()
-        if _G.LevelHunter == true then
             local farmandoNivel = true
             local eliteHunterAtivo = false
         
@@ -7574,16 +7575,6 @@ local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", De
             farmarNivel()
         end
         
-        -- Inicia o script, começando o farming de nível
-            if farmandoNivel == true then
-                farmarNivel()
-            else
-                -- Se não estiver farmando, significa que o Elite Hunter está ativo, aguardando até voltar para o farming.
-                wait(1)
-            end
-        end
-        end
-    end)
 
 
 OrionLib:MakeNotification(
