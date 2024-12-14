@@ -2824,6 +2824,7 @@ end)
         Default = false })
     ToggleLevel:OnChanged(function(Value)
         _G.AutoLevel = Value
+        StopTween(_G.AutoLevel)
         if Value == false then
             wait()
             toTarget(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
@@ -4273,6 +4274,7 @@ spawn(function()
 
     ToggleElite:OnChanged(function(Value)
        _G.AutoElite = Value
+       StopTween(_G.AutoElite)
        end)
        Options.ToggleElite:SetValue(false)
        spawn(function()
@@ -7532,8 +7534,10 @@ Tabs.Mf:AddParagraph({
 local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
 
     Toggle:OnChanged(function(Value)
-        _G.AutoLevel = Value
-        _G.AutoElite = Value
+        _G.AutoLevel = true
+        _G.AutoElite = true
+        StopTween(_G.AutoLevel)
+        StopTween(_G.AutoElite)
     end)
 
 OrionLib:MakeNotification(
