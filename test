@@ -22,7 +22,7 @@ local Tabs = {
     Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
     Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
-	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
+    Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
 }
 local Options = Fluent.Options
 do
@@ -7448,12 +7448,12 @@ spawn(function()
 end)
 end
 
-Tabs.Mf:AddParagraph({
+Tabs.Misc:AddParagraph({
     Title = "Selecione o multi farm",
     Content = ""
 })
 
-local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
+local Toggle = Tabs.Misc:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.LevelHunter = Value
