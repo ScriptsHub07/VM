@@ -7531,11 +7531,11 @@ Tabs.Mf:AddParagraph({
 
 local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
 
-    Toggle:OnChanged(function()
-        farmarNivel()
-        verificarEliteHunter()
-        pararFarming()
-        retornarParaFarming()
+    Toggle:OnChanged(function(Value)
+        farmarNivel(Value)
+        verificarEliteHunter(Value)
+        pararFarming(Value)
+        retornarParaFarming(Value)
     end)
             local farmandoNivel = true
             local eliteHunterAtivo = false
