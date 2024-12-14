@@ -7460,70 +7460,55 @@ local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", De
         _G.LevelHunter = Value
     end)
 
-    if _G.LevelHunter == true then
-        -- Definindo as variáveis fora do if para garantir que elas sejam acessíveis
-        local farmandoNivel = true
-        local eliteHunterAtivo = false
+if _G.LevelHunter == true then
+    local farmandoNivel = true
+    local eliteHunterAtivo = false
+
+-- Função para farmar NPCs e upar nível
+function farmarNivel()
+    _G.AutoLevel = true
+    _G.AutoElite = false
+    print("Fazendo farm de nível...")
     
-        -- Função para farmar NPCs e upar nível
-        function farmarNivel()
-            _G.AutoLevel = true
-            print("Fazendo farm de nível...")
-            verificarEliteHunter()
-        end
-    
-        -- Função para verificar se o Elite Hunter está ativo
-        function verificarEliteHunter()
-            local questTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
-            if string.find(questTitle, "Diablo") or string.find(questTitle, "Deandre") or string.find(questTitle, "Urban") then
-                eliteHunterAtivo = true
-                pararFarming()
-            else
-                eliteHunterAtivo = false
-                -- Continua farmando se o Elite Hunter não estiver ativo
-                if farmandoNivel then
-                    farmarNivel()
-                end
-            end
-        end
-    
-        -- Função para parar o farming de nível e ir para o Elite Hunter
-        function pararFarming()
-            farmandoNivel = false
-            _G.AutoLevel = false
-            print("Elite Hunter detectado, indo caçar!")
-            -- Você pode chamar a função para ir ao Elite Hunter aqui, mas para simplificação:
-            derrotarEliteHunter()
-        end
-    
-        -- Função para derrotar o Elite Hunter
-        function derrotarEliteHunter()
-            _G.AutoElite = true
-            print("Derrotando o Elite Hunter...")
-            
-            -- Após derrotar o Elite Hunter, retorna ao farming de nível
-            wait(5)  -- Espera um tempo após derrotar o Elite Hunter, para não fazer o loop imediatamente
-            retornarParaFarming()
-        end
-    
-        -- Função para retornar ao farming de nível
-        function retornarParaFarming()
-            print("Elite Hunter derrotado, voltando para o farming de nível...")
-            farmandoNivel = true
-            -- Volta a farmar
-            farmarNivel()
-        end
-    
-        -- Inicia o script, começando o farming de nível
-        while true do
-            -- Verifica se está farmando nível
-            if farmandoNivel then
-                farmarNivel()
-            else
-                wait(5)  -- Aguarda um pouco antes de verificar novamente
-            end
-        end
+    verificarEliteHunter()
+end
+
+-- Função para verificar se o Elite Hunter está ativo
+function verificarEliteHunter()
+    if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+        pararFarming()
+        irParaEliteHunter()
+    else
+        eliteHunterAtivo = false
+        farmandoNivel = true
+        farmarNivel()
     end
+end
+
+-- Função para parar o farming de nível e ir para o Elite Hunter
+function pararFarming()
+    farmandoNivel = false
+    print("Elite Hunter detectado, indo caçar!")
+    _G.AutoLevel = false
+    _G.AutoElite = true
+end
+-- Função para retornar ao farming de nível
+function retornarParaFarming()
+    print("Elite Hunter derrotado, voltando para o farming de nível...")
+    farmandoNivel = true
+    farmarNivel()
+end
+
+-- Inicia o script, começando o farming de nível
+    if farmandoNivel == true then
+        farmarNivel()
+    else
+        -- Se não estiver farmando, significa que o Elite Hunter está ativo, aguardando até voltar para o farming.
+        wait(1)
+    end
+end
+end
+
     
 OrionLib:MakeNotification(
     {
