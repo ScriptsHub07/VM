@@ -7508,7 +7508,7 @@ local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", De
     -- Inicia o script, começando o farming de nível
     while true do
         if farmandoNivel then
-            LevelHunter()
+            farmarNivel()
         else
             wait(5)
         end
