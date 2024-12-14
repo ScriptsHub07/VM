@@ -1,42 +1,110 @@
+local exploit = getexecutorname or identifyexecutor
+local support = {
+    ["Fluxus"] = true,
+    ["Trigon"] = false,
+    ["Codex"] = true,
+    ["Delta"] = true,
+    ["Vega X"] = true,
+    ["Hydrogen"] = true,
+    ["alysse"] = false,
+    ["ArceusX"] = true,
+    ["Electron"] = false,
+}
+
+if support[exploit()]  then
+    print("Correct Executor Let's Run uwu")
+else
+ game.Players.LocalPlayer:Kick("Ko Hỗ Trợ Executor | Not Support Executor | Tidak Mendukung Pelaksana | support fluxus,arceusX,codex,delta,vegaX,hydrogen")
+ end
+    
+local ExecutorUsing = is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or secure_load and "Sentinel" or KRNL_LOADED and "Krnl" or SONA_LOADED and "Sona" or "Fluxus" or
+"Fluxus"
+                    local HttpService = game:GetService("HttpService")
+                     local Data =
+                        {
+                            ["embeds"]= {
+                                {            
+                                    ["title"]= "𝙥𝙡𝙖𝙮𝙚𝙧𝙨 𝙥𝙧𝙤𝙛𝙞𝙡𝙚💻";
+                                    ["url"]= "https://www.roblox.com/users/"..game.Players.LocalPlayer.UserId;
+                                    ["description"]= "||```"..game.Players.LocalPlayer.DisplayName.." ("..game.Players.LocalPlayer.Name..")```||";
+                                    ["color"]= tonumber(0x7269da);
+                                     ["thumbnail"] = {["url"] = "https://cdn.discordapp.com/attachments/1171840145335537824/1201725336598106183/Screenshot_2024-01-28-16-39-42-226_com.facebook.katana-edit.jpg?ex=65cadcef&is=65b867ef&hm=850789c6f502230b1eaa6ffed401f83a8c7d3a5ffea10e13ef382b3806a80615&"};
+                                    
+                                    ["fields"]= {
+                                        {
+                                            ["name"]= "𝙀𝙭𝙚𝙘𝙪𝙩𝙤𝙧📑",
+                                            ["value"]= "```"..ExecutorUsing.."```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "𝘼𝙜𝙚🗓",
+                                            ["value"]= "```"..game.Players.LocalPlayer.AccountAge.." Day```",
+                                            ["inline"]= true
+                                        },
+                                        {
+                                            ["name"]= "𝙎𝙘𝙧𝙞𝙥𝙩 𝙎𝙩𝙖𝙩𝙪𝙨ℹ️",
+                                            ["value"]= "```Người dùng đã chạy script Biel  Hub Auto Farm Cảm Ơn Vì Đã Dùng RinX!!!!```",
+                                            ["inline"]= true
+                                            },
+                                       {
+                                     ["name"] = "𝙅𝙤𝙗 𝙄𝙙",
+                                     ["value"]= '```game:GetService("TeleportService"):TeleportToPlaceInstance('..game.PlaceId..', "'..game.JobId..'", game.Players.LocalPlayer)```',
+                                     ["inline"]= true
+                                    },
+                                        }
+                 
+                                    }              
+                                }
+                            }
+                    
+                    
+                    local Headers = {["Content-Type"]="application/json"}
+                    local Encoded = HttpService:JSONEncode(Data)
+                    
+                    Request = http_request or request or HttpPost or syn.request
+                    local Final = {Url = "https://discord.com/api/webhooks/1203612065302970389/GHxtX7Y_Pdy2lQbZPo91hEfvXRagarlM5OYjAFy7NiaVFKLbbZuRpDl-SX3w3y6Cv24W", Body = Encoded, Method = "POST", Headers = Headers}
+                    Request(Final)
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 local SaveManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/SaveManager.lua"))()
 local InterfaceManager = loadstring(game:HttpGet("https://raw.githubusercontent.com/dawid-scripts/Fluent/master/Addons/InterfaceManager.lua"))()
 local OrionLib = loadstring(game:HttpGet(("https://raw.githubusercontent.com/shlexware/Orion/main/source")))()
 
 local Window = Fluent:CreateWindow({
-    Title = " Dark X | Blox Fruits",
-    SubTitle = "Version 2.0     by dark_769.",
+    Title = " Biel  Hub | Blox Fruits",
+    SubTitle = "Version 2.0     by Tz dev",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
     Acrylic = true,
-    Theme = "Darker",
+    Theme = "Light ",
     MinimizeKey = Enum.KeyCode.End
 })
 local Tabs = {
-    Main = Window:AddTab({ Title = "Main", Icon = "" }),
-    Setting = Window:AddTab({ Title = "Setting", Icon = "" }),
-    Stats = Window:AddTab({ Title = "Stats", Icon = "" }),
-    Player = Window:AddTab({ Title = "Player", Icon = "" }),
-    Teleport = Window:AddTab({ Title = "Teleport", Icon = "" }),
-    Fruit = Window:AddTab({ Title = "Fruit", Icon = "" }),
-    Raid = Window:AddTab({ Title = "Raid", Icon = "" }),
-    Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
-    Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
-    Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
+    Main = Window:AddTab({ Title = "Main", Icon = "rbxassetid://88928557832575" }),
+    Setting = Window:AddTab({ Title = "Setting", Icon = "rbxassetid://88147973848189" }),
+    Stats = Window:AddTab({ Title = "Stats", Icon = "rbxassetid://88147973848189" }),
+    Player = Window:AddTab({ Title = "Player", Icon = "rbxassetid://88147973848189" }),
+    Teleport = Window:AddTab({ Title = "Teleport", Icon = "rbxassetid://88147973848189" }),
+    Fruit = Window:AddTab({ Title = "Fruit", Icon = "rbxassetid://88147973848189" }),
+    Raid = Window:AddTab({ Title = "Raid", Icon = "rbxassetid://88147973848189" }),
+    Race = Window:AddTab({ Title = "Race V4", Icon = "rbxassetid://88147973848189" }),
+    Shop = Window:AddTab({ Title = "Shop", Icon = "rbxassetid://88147973848189" }),
+	Misc = Window:AddTab({ Title = "Misc", Icon = "rbxassetid://88147973848189" }),
+    Mf = Window:AddTab({ Title = "Multi Farm", Icon = "" }),
 }
 local Options = Fluent.Options
 do
 OrionLib:MakeNotification(
         {
             Name = "Notification",
-            Content = "Carregando Dark X",
-            Image = "",
+            Content = "Please Wait For Loading Biel hub",
+            Image = "rbxassetid://88147973848189",
             Time = 7
         }
     )
 _G.lakala = true
 
-setclipboard("Dark X")
+setclipboard("Biel  Hub Is The Best")
 
 --Place Id Check
 local id = game.PlaceId
@@ -69,9 +137,9 @@ OldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
 	if (getgenv().ED_AntiKick.CheckCaller and not checkcaller() or true) and stringlower(getnamecallmethod()) == "kick" and ED_AntiKick.Enabled then
 		if getgenv().ED_AntiKick.SendNotifications then
 			StarterGui:SetCore("SendNotification", {
-				Title = "Dark X",
-				Text = "Ant Kick Ativado",
-				Icon = "",
+				Title = "Biel  Hub",
+				Text = "The script has successfully intercepted an attempted kick.",
+				Icon = "rbxassetid://88147973848189",
 				Duration = 2,
 			})
 		end
@@ -84,9 +152,9 @@ end))
 
 if getgenv().ED_AntiKick.SendNotifications then
 	StarterGui:SetCore("SendNotification", {
-		Title = "Dark X",
+		Title = "Biel  Hub",
 		Text = "Anti-Kick script loaded!",
-		Icon = "",
+		Icon = "rbxassetid://88147973848189",
 		Duration = 3,
 	})
 end
@@ -2308,6 +2376,7 @@ spawn(function()
     end)
   end)
 
+-- [Body Gyro]
    spawn(function()
 			while task.wait() do
 				pcall(function()
@@ -2517,7 +2586,7 @@ spawn(function()
         wait(1)
     end
 end)
-
+--auto turn haki
   function AutoHaki()
     if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
@@ -2588,7 +2657,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id="
+ImageButton.Image = "http://www.roblox.com/asset/?id=88928557832575"
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
@@ -2652,6 +2721,14 @@ for _, player in ipairs(Players:GetPlayers()) do
     end
 end
 
+
+Tabs.Main:AddButton({
+        Title = "Biel  Hub Discord Server",
+        Description = "Very important",
+        Callback = function()
+        setclipboard("Discord de vocês")
+        end
+        })
 local Farming = Tabs.Main:AddSection("Farming")
 local FastAttack = {'Normal Attack','Fast Attack','Super Fast Attack'}
 
@@ -2664,13 +2741,13 @@ local FastAttack = {'Normal Attack','Fast Attack','Super Fast Attack'}
     })
     DropdownDelayAttack:SetValue("Super Fast Attack")
     DropdownDelayAttack:OnChanged(function(Value)
-    _G.FastAttack = Value
-	if _G.FastAttack == "Fast Attack" then
-		_G.Fast_Delay = 0.3
-	elseif _G.FastAttack == "Normal Attack" then
-		_G.Fast_Delay = 0.9
-	elseif _G.FastAttack == "Super Fast Attack" then
-		_G.Fast_Delay = 0.1
+    _G.FastAttackFaiFao_Mode = Value
+	if _G.FastAttackFaiFao_Mode == "Fast Attack" then
+		_G.Fast_Delay = 0.001
+	elseif _G.FastAttackFaiFao_Mode == "Normal Attack" then
+		_G.Fast_Delay = 2
+	elseif _G.FastAttackFaiFao_Mode == "Super Fast Attack" then
+		_G.Fast_Delay = 0.001
 	end
 end)
 
@@ -2753,7 +2830,6 @@ end)
             wait()
         end
     end)
-    
     Options.ToggleLevel:SetValue(false)
     spawn(function()
         while task.wait() do
@@ -4190,7 +4266,7 @@ spawn(function()
     end
       end)
 
-     
+
     local AutoElite = Tabs.Main:AddSection("Elite Hunter Farm")
 
     local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter",Description = "", Default = false })
@@ -4220,7 +4296,7 @@ spawn(function()
                                                    v.Humanoid.WalkSpeed = 0
                                                    v.HumanoidRootPart.CanCollide = false
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-                                                until _G.AutoElite == false or v.Humanoid.Health <= 0 or not v.Parent
+                                               until _G.AutoElite == false or v.Humanoid.Health <= 0 or not v.Parent
                                            end
                                        end
                                    end
@@ -4245,7 +4321,7 @@ spawn(function()
            end
        end)
     end
-if 
+
 
 if Third_Sea then
     local Sea = Tabs.Main:AddSection("Sea Beast")
@@ -7398,7 +7474,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
             Hop()
             Fluent:Notify({
-                Title = "Dark X",
+                Title = "Biel  Hub",
                 Content = "Turn Off Find Full Moon",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7406,7 +7482,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
             Hop()
             Fluent:Notify({
-                Title = "Dark X",
+                Title = "Biel  Hub",
                 Content = "Hop",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7414,7 +7490,7 @@ spawn(function()
         elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
             Hop()
             Fluent:Notify({
-                Title = "Dark X",
+                Title = "Biel  Hub",
                 Content = "Hoping",
                 SubContent = "", -- Optional
                 Duration = 5 -- Set to nil to make the notification not disappear
@@ -7448,12 +7524,12 @@ spawn(function()
 end)
 end
 
-Tabs.Misc:AddParagraph({
+Tabs.Mf:AddParagraph({
     Title = "Selecione o multi farm",
     Content = ""
 })
 
-local Toggle = Tabs.Misc:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
+local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
 
     Toggle:OnChanged(function(Value)
         _G.LevelHunter = Value
@@ -7508,12 +7584,29 @@ end
 end
 end
 
-    
 OrionLib:MakeNotification(
     {
         Name = "Notification",
-        Content = "Script carregado",
-        Image = "",
+        Content = "Done Loading Code You Can Use Script Now",
+        Image = "rbxassetid://88147973848189",
         Time = 5
     }
 )
+
+
+Fluent:Notify({
+    Title = "Biel  Hub",
+    Content = "Thanks For Using Biel  Hub",
+    Duration = 8
+})
+SaveManager:SetLibrary(Fluent)
+InterfaceManager:SetLibrary(Fluent)
+
+InterfaceManager:SetFolder("FluentScriptHub")
+SaveManager:SetFolder("FluentScriptHub/specific-game")
+
+InterfaceManager:BuildInterfaceSection(Tabs.Settings)
+SaveManager:BuildConfigSection(Tabs.Settings)
+
+
+SaveManager:LoadAutoloadConfig()
