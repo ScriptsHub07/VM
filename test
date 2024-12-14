@@ -23,6 +23,7 @@ local Tabs = {
     Race = Window:AddTab({ Title = "Race V4", Icon = "" }),
     Shop = Window:AddTab({ Title = "Shop", Icon = "" }),
 	Misc = Window:AddTab({ Title = "Misc", Icon = "" }),
+    Mf = Window:AddTab({ Title = "Multi Farm", Icon = "" }),
 }
 local Options = Fluent.Options
 do
@@ -7448,12 +7449,21 @@ spawn(function()
 end)
 end
 
--- Variáveis para controlar o status do farm e do Elite Hunter
-function LevelHunter()
-    if _G.AutoLevel == true and _G.AutoElite == true then
+Tabs.Mf:AddParagraph({
+    Title = "Selecione o multi farm",
+    Content = ""
+})
+
+local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
+
+    Toggle:OnChanged(function(Value)
+        _G.LevelHunter = Value
+    end)
+
+    if _G.LevelHunter == true then
         local farmandoNivel = true
         local eliteHunterAtivo = false
-    
+
     -- Função para farmar NPCs e upar nível
     function farmarNivel()
         _G.AutoLevel = true
@@ -7504,7 +7514,6 @@ function LevelHunter()
         end
     end
     end
-end
 
 
 OrionLib:MakeNotification(
