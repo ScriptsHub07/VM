@@ -2308,7 +2308,6 @@ spawn(function()
     end)
   end)
 
--- [Body Gyro]
    spawn(function()
 			while task.wait() do
 				pcall(function()
@@ -2518,7 +2517,7 @@ spawn(function()
         wait(1)
     end
 end)
---auto turn haki
+
   function AutoHaki()
     if not game:GetService("Players").LocalPlayer.Character:FindFirstChild("HasBuso") then
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buso")
@@ -2589,7 +2588,7 @@ ImageButton.BorderSizePixel = 0
 ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
 ImageButton.Size = UDim2.new(0, 50, 0, 50)
 ImageButton.Draggable = true
-ImageButton.Image = "http://www.roblox.com/asset/?id=94202883962855"
+ImageButton.Image = "http://www.roblox.com/asset/?id="
 ImageButton.MouseButton1Down:connect(function()
     game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)
 end)
@@ -2754,6 +2753,7 @@ end)
             wait()
         end
     end)
+    
     Options.ToggleLevel:SetValue(false)
     spawn(function()
         while task.wait() do
@@ -4190,7 +4190,7 @@ spawn(function()
     end
       end)
 
-
+     
     local AutoElite = Tabs.Main:AddSection("Elite Hunter Farm")
 
     local ToggleElite = Tabs.Main:AddToggle("ToggleElite", {Title = "Auto Elite Hunter",Description = "", Default = false })
@@ -4220,7 +4220,7 @@ spawn(function()
                                                    v.Humanoid.WalkSpeed = 0
                                                    v.HumanoidRootPart.CanCollide = false
                                                    v.HumanoidRootPart.Size = Vector3.new(1, 1, 1)
-                                               until _G.AutoElite == false or v.Humanoid.Health <= 0 or not v.Parent
+                                                until _G.AutoElite == false or v.Humanoid.Health <= 0 or not v.Parent
                                            end
                                        end
                                    end
@@ -4245,7 +4245,7 @@ spawn(function()
            end
        end)
     end
-
+if 
 
 if Third_Sea then
     local Sea = Tabs.Main:AddSection("Sea Beast")
@@ -7448,22 +7448,75 @@ spawn(function()
 end)
 end
 
+-- Variáveis para controlar o status do farm e do Elite Hunter
+if _G.AutoLevel == true and _G.AutoElite == true then
+    local farmandoNivel = true
+    local eliteHunterAtivo = false
+
+-- Função para farmar NPCs e upar nível
+function farmarNivel()
+    _G.AutoLevel = true
+    print("Fazendo farm de nível...")
+    verificarEliteHunter()
+end
+
+-- Função para verificar se o Elite Hunter está ativo
+function verificarEliteHunter()
+    string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Diablo") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Deandre") or string.find(game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text,"Urban") then
+                               
+
+    -- Exemplo simplificado de verificação (você pode adaptar para a lógica real)
+    if game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("ReplicatedStorage"):FindFirstChild("Urban") then
+        eliteHunterAtivo = true
+        pararFarming()
+    else
+        eliteHunterAtivo = false
+        farmandoNivel = true
+        farmarNivel()
+    end
+end
+
+-- Função para parar o farming de nível e ir para o Elite Hunter
+function pararFarming()
+    farmandoNivel = false
+    print("Elite Hunter detectado, indo caçar!")
+    _G.AutoLevel = false
+end
+
+-- Função para derrotar o Elite Hunter
+function derrotarEliteHunter()
+    _G.AutoElite = true
+    print("Derrotando o Elite Hunter...")
+
+    retornarParaFarming()
+end
+
+-- Função para retornar ao farming de nível
+function retornarParaFarming()
+    print("Elite Hunter derrotado, voltando para o farming de nível...")
+    farmandoNivel = true
+    farmarNivel()
+end
+
+-- Inicia o script, começando o farming de nível
+while true do
+    if farmandoNivel then
+        farmarNivel()
+    else
+        wait(1)
+    end
+end
+end
+
 
 OrionLib:MakeNotification(
     {
         Name = "Notification",
-        Content = "Done Loading Code You Can Use Script Now",
+        Content = "Script carregado",
         Image = "",
         Time = 5
     }
 )
-
-
-Fluent:Notify({
-    Title = "Dark X",
-    Content = "Thanks For Using Dark X",
-    Duration = 8
-})
 SaveManager:SetLibrary(Fluent)
 InterfaceManager:SetLibrary(Fluent)
 
