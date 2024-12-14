@@ -7524,7 +7524,7 @@ spawn(function()
 end)
 end
 
-local farmandoNivel = true
+            local farmandoNivel = true
             local eliteHunterAtivo = false
         
         -- Função para farmar NPCs e upar nível
@@ -7571,10 +7571,12 @@ local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", De
 
     Toggle:OnChanged(function(Value)
         _G.LevelHunter = Value
-        farmarNivel()
-        verificarEliteHunter()
-        pararFarming()
-        retornarParaFarming()
+        if _G.LevelHunter == true then
+            farmarNivel()
+            verificarEliteHunter()
+            pararFarming()
+            retornarParaFarming()
+        end
     end)
 
 OrionLib:MakeNotification(
