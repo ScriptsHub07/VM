@@ -7540,20 +7540,6 @@ spawn(function()
 end)
 end
 
-Tabs.Mf:AddParagraph({
-    Title = "Selecione o multi farm",
-    Content = ""
-})
-
-local Toggle = Tabs.Mf:AddToggle("MyToggle", {Title = "Level e Elite Hunter", Default = false })
-
-    Toggle:OnChanged(function(Value)
-        _G.AutoLevel = true
-        _G.AutoElite = true
-        StopTween(_G.AutoLevel)
-        StopTween(_G.AutoElite)
-    end)
-
 OrionLib:MakeNotification(
     {
         Name = "Notification",
