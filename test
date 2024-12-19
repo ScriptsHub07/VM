@@ -12,7 +12,7 @@ end
 _G.Settings = {
 
 	Main = {
-		["Auto Farm Level"] = false,
+		["Auto Farm Level"] = true,
 		["Fast Auto Farm Level"] = false,
 
 		--[Mob Aura]
@@ -104,7 +104,7 @@ _G.Settings = {
 		["Fast Attack"] = true,
 		["Fast Attack Type"] = {"Fast"}, --{Normal,Fast,Slow}
 
-		["Select Weapon"] = {},
+		["Select Weapon"] = {"Melee"},
 
 
 		--[Misc Configs]
