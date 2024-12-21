@@ -1,7 +1,7 @@
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/ScriptsHub07/dark/refs/heads/main/dgdgdgd.txt"))() -- LIBRARY
 
 
-local Window = Library:CreateWindow('Dark X')
+local Window = Library:CreateWindow('Lures Script')
 
 local Tab = {
     Tab_1 = Window:addTab('#Home'),
@@ -7963,7 +7963,7 @@ RaceFragShop:addButton("Cyborg [ $??? ]", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-RaceFragShop:addButton("Suprise Bone [ ðŸ¦´50 Bone ]", function()
+RaceFragShop:addButton("Suprise Bone [ 50 Bone ]", function()
     local args = {
         [1] = "Bones",
         [2] = "Buy",
@@ -7973,7 +7973,7 @@ RaceFragShop:addButton("Suprise Bone [ ðŸ¦´50 Bone ]", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-RaceFragShop:addButton("Stat Refund [ ðŸ¦´50 Bone ]", function()
+RaceFragShop:addButton("Stat Refund [ 50 Bone ]", function()
     local args = {
         [1] = "Bones",
         [2] = "Buy",
@@ -7983,7 +7983,7 @@ RaceFragShop:addButton("Stat Refund [ ðŸ¦´50 Bone ]", function()
     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
 end)
 
-RaceFragShop:addButton("Race Reroll [ ðŸ¦´50 Bone ]", function()
+RaceFragShop:addButton("Race Reroll [ 50 Bone ]", function()
     local args = {
         [1] = "Bones",
         [2] = "Buy",
